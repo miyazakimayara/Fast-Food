@@ -49,6 +49,11 @@ public class ProdutoController {
         }
     }
     
+    @GetMapping("/produto/cat/{cat}")
+    public List<Produto> buscarPorCat (@PathVariable String cat){
+        return produtoRepository.findByCat(cat);
+    }
+    
     @PostMapping("/produto")
     @ResponseStatus(HttpStatus.CREATED)
     public Produto adicionar(@Valid @RequestBody Produto produto){

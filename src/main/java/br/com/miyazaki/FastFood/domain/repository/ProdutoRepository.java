@@ -5,6 +5,7 @@
 package br.com.miyazaki.FastFood.domain.repository;
 
 import br.com.miyazaki.FastFood.domain.model.Produto;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
-    
-    
+    List<Produto> findByCat(String cat);
 }
